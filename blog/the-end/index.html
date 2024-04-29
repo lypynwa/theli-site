@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en-us"
+  dir="ltr">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>The End | theli site</title>
+
+
+<link rel="stylesheet" href="/assets/combined.min.d293d630a95ca8c70a09421eef4c6a583ef80b061900cba772471eb142c402f5.css" media="all">
+
+
+
+</head>
+
+
+
+
+
+<body class="auto">
+
+  <div class="content">
+    <header>
+      
+
+<div class="header">
+    <h1 class="header-title">theli site</h1>
+
+    <div class="flex">
+        
+
+        
+        
+        <p class="small ">
+            <a href="/">
+                /home
+            </a>
+        </p>
+        
+        <p class="small ">
+            <a href="/posts">
+                /posts
+            </a>
+        </p>
+        
+        <p class="small ">
+            <a href="/about">
+                /about
+            </a>
+        </p>
+        
+        
+    </div>
+
+</div>
+    </header>
+
+    <main class="main">
+      
+
+
+
+<div  class="autonumber" >
+
+  <div class=" single-intro-container">
+
+    
+
+    <h1 class="single-title">The End</h1>
+    
+    <p class="single-summary">烤地瓜</p>
+    
+
+    
+
+    <p class="single-readtime">
+      
+      
+      
+      <time datetime="2024-04-29T00:00:00&#43;00:00">April 29, 2024</time>
+      -
+      
+      
+      1 min
+      
+    </p>
+
+  </div>
+
+  
+
+  
+  <aside class="toc">
+    <p><strong>Table of contents</strong></p>
+    <nav id="TableOfContents"></nav>
+  </aside>
+  
+
+  
+
+  <div class="single-content">
+    <h1 id="the-end">The End</h1>
+<pre><code># 烤地瓜:  随烧烤时间改变,地瓜的状态发生变化  0-3 生的  3-6 半生不熟  6-8 熟了  &gt;8 烤糊了
+</code></pre>
+<p>class SweetPotato:
+&ldquo;&ldquo;&ldquo;地瓜类&rdquo;&rdquo;&rdquo;
+def <strong>init</strong>(self, num):
+# 定义属性
+self.cooked_state = &ldquo;生的&rdquo;  # 地瓜的状态
+self.cooked_time = 0  # 地瓜的烧烤总时间
+self.num = num  # 地瓜编号
+self.condiments = []  # 地瓜的佐料列表</p>
+<pre><code>def cook(self, time):
+    &quot;&quot;&quot;烧烤&quot;&quot;&quot;
+    self.cooked_time += time  # 烧烤总时间 累加每次烧烤的时间
+    # 判断烧烤的总时间
+    if self.cooked_time &gt;= 0 and self.cooked_time &lt; 3:
+        self.cooked_state = &quot;生的&quot;
+    elif self.cooked_time &gt;=3 and self.cooked_time &lt;6:
+        self.cooked_state = &quot;半生不熟&quot;
+    elif self.cooked_time &gt;= 6 and self.cooked_time &lt;8:
+        self.cooked_state = &quot;熟了&quot;
+    else:
+        self.cooked_state = &quot;烤糊了&quot;
+
+def add_condiment(self, condiment):
+    &quot;&quot;&quot;
+    添加佐料
+    :param condiment: 佐料
+    &quot;&quot;&quot;
+    self.condiments.append(condiment)
+
+def __str__(self):
+    return &quot;地瓜%d 的状态: %s, 佐料:%s&quot; % (self.num, self.cooked_state, self.condiments)
+</code></pre>
+<h1 id="创建对象">创建对象</h1>
+<p>digua1 = SweetPotato(1)</p>
+<h1 id="执行烧烤操作">执行烧烤操作</h1>
+<p>digua1.cook(2)
+digua1.add_condiment(&ldquo;酱油&rdquo;)
+print(digua1)
+digua1.cook(3)
+digua1.add_condiment(&ldquo;盐&rdquo;)
+print(digua1)
+digua1.cook(1)
+digua1.add_condiment(&ldquo;辣酱&rdquo;)
+print(digua1)
+digua1.cook(2)
+print(digua1)</p>
+<h1 id="创建对象2">创建对象2</h1>
+<p>digua2 = SweetPotato(2)
+digua2.cook(1)
+digua2.add_condiment(&ldquo;番茄酱&rdquo;)
+print(digua2)
+digua2.cook(5)
+digua2.add_condiment(&ldquo;沙拉&rdquo;)
+print(digua2)
+digua2.cook(4)
+digua2.add_condiment(&ldquo;芥末&rdquo;)
+print(digua2)</p>
+
+  </div>
+
+</div>
+
+
+    </main>
+  </div>
+
+  <footer>
+    <p>Powered by
+    <a href="https://gohugo.io/">Hugo</a>
+    and
+    <a href="https://github.com/tomfran/typo">tomfran/typo</a>
+</p>
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body);"></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false }
+      ]
+    });
+  });
+</script>
+
+  </footer>
+
+</body>
+
+
+<script>
+
+  function isAuto() {
+    return document.body.classList.contains("auto");
+  }
+
+  function setTheme() {
+    if (!isAuto()) {
+      return
+    }
+
+    console
+    document.body.classList.remove("auto");
+    let cls = "light";
+
+    console.log
+
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      cls = "dark";
+    }
+
+    document.body.classList.add(cls);
+
+  }
+
+  function invert() {
+    document.body.classList.toggle("dark");
+    document.body.classList.toggle("light");
+  }
+
+  if (isAuto()) {
+    console.log("Setting invert listener");
+    window.matchMedia('(prefers-color-scheme: dark)').addListener(invert);
+  }
+
+  setTheme();
+
+</script>
+
+
+</html>

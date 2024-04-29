@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en-us"
+  dir="ltr">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>The End | theli site</title>
+
+
+<link rel="stylesheet" href="/assets/combined.min.d293d630a95ca8c70a09421eef4c6a583ef80b061900cba772471eb142c402f5.css" media="all">
+
+
+
+</head>
+
+
+
+
+
+<body class="auto">
+
+  <div class="content">
+    <header>
+      
+
+<div class="header">
+    <h1 class="header-title">theli site</h1>
+
+    <div class="flex">
+        
+
+        
+        
+        <p class="small ">
+            <a href="/">
+                /home
+            </a>
+        </p>
+        
+        <p class="small ">
+            <a href="/posts">
+                /posts
+            </a>
+        </p>
+        
+        <p class="small ">
+            <a href="/about">
+                /about
+            </a>
+        </p>
+        
+        
+    </div>
+
+</div>
+    </header>
+
+    <main class="main">
+      
+
+
+
+<div  class="autonumber" >
+
+  <div class=" single-intro-container">
+
+    
+
+    <h1 class="single-title">The End</h1>
+    
+    <p class="single-summary">烤地瓜</p>
+    
+
+    
+
+    <p class="single-readtime">
+      
+      
+      
+      <time datetime="2024-04-29T00:00:00&#43;00:00">April 29, 2024</time>
+      -
+      
+      
+      2 min
+      
+    </p>
+
+  </div>
+
+  
+
+  
+  <aside class="toc">
+    <p><strong>Table of contents</strong></p>
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#目标烤地瓜">目标：烤地瓜</a></li>
+        <li><a href="#定义地瓜的状态">定义地瓜的状态</a></li>
+        <li><a href="#创建对象">创建对象</a></li>
+        <li><a href="#执行烧烤操作">执行烧烤操作</a></li>
+        <li><a href="#创建对象2">创建对象2</a></li>
+        <li><a href="#再次烧烤">再次烧烤</a></li>
+        <li><a href="#完成">完成</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </aside>
+  
+
+  
+
+  <div class="single-content">
+    <h1 id="烤地瓜高清复刻版">烤地瓜高清复刻版</h1>
+<hr>
+<h3 id="目标烤地瓜">目标：烤地瓜</h3>
+<h3 id="定义地瓜的状态">定义地瓜的状态</h3>
+<ul>
+<li>随烧烤时间改变,地瓜的状态发生变化
+<ul>
+<li>0-3  生的</li>
+<li>3-6  半生不熟</li>
+<li>6-8  熟了</li>
+<li><code>&gt;</code> 8  烤糊了</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="font-weight:bold;text-decoration:underline">class</span> <span style="color:#666;font-weight:bold;font-style:italic">SweetPotato</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#666;font-style:italic">&#34;&#34;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#666;font-style:italic">    地瓜类
+</span></span></span><span style="display:flex;"><span><span style="color:#666;font-style:italic">    &#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="font-weight:bold;text-decoration:underline">def</span> __init__(<span style="font-weight:bold;font-style:italic">self</span>, num: <span style="font-weight:bold;font-style:italic">int</span>) -&gt; <span style="font-weight:bold;text-decoration:underline">None</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#666;font-style:italic">&#34;&#34;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#666;font-style:italic">        Initialize a SweetPotato object.
+</span></span></span><span style="display:flex;"><span><span style="color:#666;font-style:italic">
+</span></span></span><span style="display:flex;"><span><span style="color:#666;font-style:italic">        Args:
+</span></span></span><span style="display:flex;"><span><span style="color:#666;font-style:italic">            num (int): The potato number.
+</span></span></span><span style="display:flex;"><span><span style="color:#666;font-style:italic">        &#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#888;font-style:italic"># Define attributes</span>
+</span></span><span style="display:flex;"><span>        <span style="font-weight:bold;font-style:italic">self</span>.cooked_state: <span style="font-weight:bold;font-style:italic">str</span> = <span style="color:#666;font-style:italic">&#34;生的&#34;</span>  <span style="color:#888;font-style:italic"># Potato state</span>
+</span></span><span style="display:flex;"><span>        <span style="font-weight:bold;font-style:italic">self</span>.cooked_time: <span style="font-weight:bold;font-style:italic">int</span> = 0  <span style="color:#888;font-style:italic"># Total cooking time</span>
+</span></span><span style="display:flex;"><span>        <span style="font-weight:bold;font-style:italic">self</span>.num: <span style="font-weight:bold;font-style:italic">int</span> = num  <span style="color:#888;font-style:italic"># Potato number</span>
+</span></span><span style="display:flex;"><span>        <span style="font-weight:bold;font-style:italic">self</span>.condiments: List[<span style="font-weight:bold;font-style:italic">str</span>] = []  <span style="color:#888;font-style:italic"># List of condiments</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="font-weight:bold;text-decoration:underline">def</span> <span style="color:#666;font-weight:bold;font-style:italic">cook</span>(<span style="font-weight:bold;font-style:italic">self</span>, time: <span style="font-weight:bold;font-style:italic">int</span>) -&gt; <span style="font-weight:bold;text-decoration:underline">None</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#666;font-style:italic">&#34;&#34;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#666;font-style:italic">        Cook the potato for a given time.
+</span></span></span><span style="display:flex;"><span><span style="color:#666;font-style:italic">
+</span></span></span><span style="display:flex;"><span><span style="color:#666;font-style:italic">        Args:
+</span></span></span><span style="display:flex;"><span><span style="color:#666;font-style:italic">            time (int): The time to cook the potato.
+</span></span></span><span style="display:flex;"><span><span style="color:#666;font-style:italic">
+</span></span></span><span style="display:flex;"><span><span style="color:#666;font-style:italic">        Returns:
+</span></span></span><span style="display:flex;"><span><span style="color:#666;font-style:italic">            None
+</span></span></span><span style="display:flex;"><span><span style="color:#666;font-style:italic">        &#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="font-weight:bold;font-style:italic">self</span>.cooked_time += time
+</span></span><span style="display:flex;"><span>        <span style="font-weight:bold;text-decoration:underline">if</span> 0 &lt;= <span style="font-weight:bold;font-style:italic">self</span>.cooked_time &lt; 3:
+</span></span><span style="display:flex;"><span>            <span style="font-weight:bold;font-style:italic">self</span>.cooked_state = <span style="color:#666;font-style:italic">&#34;生的&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="font-weight:bold;text-decoration:underline">elif</span> 3 &lt;= <span style="font-weight:bold;font-style:italic">self</span>.cooked_time &lt; 6:
+</span></span><span style="display:flex;"><span>            <span style="font-weight:bold;font-style:italic">self</span>.cooked_state = <span style="color:#666;font-style:italic">&#34;半生不熟&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="font-weight:bold;text-decoration:underline">elif</span> 6 &lt;= <span style="font-weight:bold;font-style:italic">self</span>.cooked_time &lt; 8:
+</span></span><span style="display:flex;"><span>            <span style="font-weight:bold;font-style:italic">self</span>.cooked_state = <span style="color:#666;font-style:italic">&#34;熟了&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="font-weight:bold;text-decoration:underline">else</span>:
+</span></span><span style="display:flex;"><span>            <span style="font-weight:bold;font-style:italic">self</span>.cooked_state = <span style="color:#666;font-style:italic">&#34;烤糊了&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="font-weight:bold;text-decoration:underline">def</span> <span style="color:#666;font-weight:bold;font-style:italic">add_condiment</span>(<span style="font-weight:bold;font-style:italic">self</span>, condiment: <span style="font-weight:bold;font-style:italic">str</span>) -&gt; <span style="font-weight:bold;text-decoration:underline">None</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#666;font-style:italic">&#34;&#34;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#666;font-style:italic">        Add a condiment to the list of condiments.
+</span></span></span><span style="display:flex;"><span><span style="color:#666;font-style:italic">
+</span></span></span><span style="display:flex;"><span><span style="color:#666;font-style:italic">        Args:
+</span></span></span><span style="display:flex;"><span><span style="color:#666;font-style:italic">            condiment (str): The condiment to add.
+</span></span></span><span style="display:flex;"><span><span style="color:#666;font-style:italic">
+</span></span></span><span style="display:flex;"><span><span style="color:#666;font-style:italic">        Returns:
+</span></span></span><span style="display:flex;"><span><span style="color:#666;font-style:italic">            None
+</span></span></span><span style="display:flex;"><span><span style="color:#666;font-style:italic">        &#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="font-weight:bold;font-style:italic">self</span>.condiments.append(condiment)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="font-weight:bold;text-decoration:underline">def</span> __str__(<span style="font-weight:bold;font-style:italic">self</span>) -&gt; <span style="font-weight:bold;font-style:italic">str</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#666;font-style:italic">&#34;&#34;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#666;font-style:italic">        Convert the SweetPotato object into a string representation.
+</span></span></span><span style="display:flex;"><span><span style="color:#666;font-style:italic">
+</span></span></span><span style="display:flex;"><span><span style="color:#666;font-style:italic">        Args:
+</span></span></span><span style="display:flex;"><span><span style="color:#666;font-style:italic">            self: The SweetPotato object.
+</span></span></span><span style="display:flex;"><span><span style="color:#666;font-style:italic">
+</span></span></span><span style="display:flex;"><span><span style="color:#666;font-style:italic">        Returns:
+</span></span></span><span style="display:flex;"><span><span style="color:#666;font-style:italic">            str: A string representation of the SweetPotato object, including its number, cooked state, and condiments.
+</span></span></span><span style="display:flex;"><span><span style="color:#666;font-style:italic">        &#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="font-weight:bold;text-decoration:underline">return</span> <span style="color:#666;font-style:italic">f</span><span style="color:#666;font-style:italic">&#34;地瓜</span><span style="color:#666;font-style:italic">{</span><span style="font-weight:bold;font-style:italic">self</span>.num<span style="color:#666;font-style:italic">}</span><span style="color:#666;font-style:italic">的状态: </span><span style="color:#666;font-style:italic">{</span><span style="font-weight:bold;font-style:italic">self</span>.cooked_state<span style="color:#666;font-style:italic">}</span><span style="color:#666;font-style:italic">, 佐料: </span><span style="color:#666;font-style:italic">{</span><span style="font-weight:bold;font-style:italic">self</span>.condiments<span style="color:#666;font-style:italic">}</span><span style="color:#666;font-style:italic">&#34;</span>
+</span></span></code></pre></div><h3 id="创建对象">创建对象</h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>sweetpotato1 = SweetPotato(1)
+</span></span></code></pre></div><h3 id="执行烧烤操作">执行烧烤操作</h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>sweetpotato1.cook(2)
+</span></span><span style="display:flex;"><span>sweetpotato1.add_condiment(<span style="color:#666;font-style:italic">&#34;酱油&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="font-weight:bold;font-style:italic">print</span>(sweetpotato1)
+</span></span><span style="display:flex;"><span>sweetpotato1.cook(3)
+</span></span><span style="display:flex;"><span>sweetpotato1.add_condiment(<span style="color:#666;font-style:italic">&#34;盐&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="font-weight:bold;font-style:italic">print</span>(sweetpotato1)
+</span></span><span style="display:flex;"><span>sweetpotato1.cook(1)
+</span></span><span style="display:flex;"><span>sweetpotato1.add_condiment(<span style="color:#666;font-style:italic">&#34;辣酱&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="font-weight:bold;font-style:italic">print</span>(sweetpotato1)
+</span></span><span style="display:flex;"><span>sweetpotato1.cook(2)
+</span></span><span style="display:flex;"><span><span style="font-weight:bold;font-style:italic">print</span>(sweetpotato1)
+</span></span></code></pre></div><h3 id="创建对象2">创建对象2</h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>sweetpotato2 = SweetPotato(2)
+</span></span></code></pre></div><h3 id="再次烧烤">再次烧烤</h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>sweetpotato2.cook(1)
+</span></span><span style="display:flex;"><span>sweetpotato2.add_condiment(<span style="color:#666;font-style:italic">&#34;番茄酱&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="font-weight:bold;font-style:italic">print</span>(sweetpotato2)
+</span></span><span style="display:flex;"><span>sweetpotato2.cook(5)
+</span></span><span style="display:flex;"><span>sweetpotato2.add_condiment(<span style="color:#666;font-style:italic">&#34;沙拉&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="font-weight:bold;font-style:italic">print</span>(sweetpotato2)
+</span></span><span style="display:flex;"><span>sweetpotato2.cook(4)
+</span></span><span style="display:flex;"><span>sweetpotato2.add_condiment(<span style="color:#666;font-style:italic">&#34;芥末&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="font-weight:bold;font-style:italic">print</span>(sweetpotato2)
+</span></span></code></pre></div><h3 id="完成">完成</h3>
+
+  </div>
+
+</div>
+
+
+    </main>
+  </div>
+
+  <footer>
+    <p>Powered by
+    <a href="https://gohugo.io/">Hugo</a>
+    and
+    <a href="https://github.com/tomfran/typo">tomfran/typo</a>
+</p>
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body);"></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false }
+      ]
+    });
+  });
+</script>
+
+  </footer>
+
+</body>
+
+
+<script>
+
+  function isAuto() {
+    return document.body.classList.contains("auto");
+  }
+
+  function setTheme() {
+    if (!isAuto()) {
+      return
+    }
+
+    console
+    document.body.classList.remove("auto");
+    let cls = "light";
+
+    console.log
+
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      cls = "dark";
+    }
+
+    document.body.classList.add(cls);
+
+  }
+
+  function invert() {
+    document.body.classList.toggle("dark");
+    document.body.classList.toggle("light");
+  }
+
+  if (isAuto()) {
+    console.log("Setting invert listener");
+    window.matchMedia('(prefers-color-scheme: dark)').addListener(invert);
+  }
+
+  setTheme();
+
+</script>
+
+
+</html>
