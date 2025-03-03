@@ -6,8 +6,15 @@
     <description>Recent content in Posts on theli site</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 29 Apr 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 04 Mar 2025 00:46:47 +0800</lastBuildDate>
     <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>New</title>
+      <link>http://localhost:1313/posts/new/</link>
+      <pubDate>Tue, 04 Mar 2025 00:46:47 +0800</pubDate>
+      <guid>http://localhost:1313/posts/new/</guid>
+      <description>烤地瓜 deepseek 导演剪辑版 实现： from typing import List from time import sleep class SweetPotato: &amp;#34;&amp;#34;&amp;#34; 🎥 导演剪辑版地瓜类 新增功能： 1. 完整的烹饪过程记录 2. 状态变化特效标记 3. 导演视角的烹饪日志 &amp;#34;&amp;#34;&amp;#34; def __init__(self, num: int) -&amp;gt; None: self.num = num self.cooked_state = &amp;#34;生的&amp;#34; self.cooked_time = 0 self.condiments: List[dict] = [] # 现在记录添加时间和佐料 self.cooking_log: List[str] = [] # 导演专用日志 self._state_history = [] # 状态变化历史 def cook(self, time: int) -&amp;gt; None: &amp;#34;&amp;#34;&amp;#34;🔥 烧烤操作增加特效和过程记录&amp;#34;&amp;#34;&amp;#34; print(f&amp;#34;\n{&amp;#39;-&amp;#39; * 30}&amp;#34;) print(f&amp;#34;🍠 地瓜 {self.</description>
+    </item>
     <item>
       <title>The End</title>
       <link>http://localhost:1313/posts/the-end/</link>

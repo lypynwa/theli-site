@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en-us"
+  dir="ltr">
+
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+
+
+
+<link rel="icon" type="image/ico" href="http://localhost:1313//favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313//favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313//favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="http://localhost:1313//android-chrome-192x192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="http://localhost:1313//apple-touch-icon.png">
+
+<meta name="description" content=""/>
+
+<title>
+    
+    New | theli site
+    
+</title>
+
+<link rel="canonical" href="http://localhost:1313/posts/new/"/>
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/assets/combined.min.1b30d651819daff0be2eb72e29c6d7b1e8846182d31842822600174f4a20be48.css" media="all">
+
+
+
+
+
+  </head>
+
+  
+
+  
+
+  <body class="auto">
+
+    <div class="content">
+      <header>
+        
+
+<div class="header">
+
+    
+
+    <h1 class="header-title">theli site</h1>
+
+    <div class="flex">
+        
+
+        
+        
+      
+        <p class="small ">
+            <a href="/" >
+                /home
+            </a>
+        </p>
+        
+      
+        <p class="small ">
+            <a href="/posts" >
+                /posts
+            </a>
+        </p>
+        
+      
+        <p class="small ">
+            <a href="/about" >
+                /about
+            </a>
+        </p>
+        
+        
+    </div>
+
+    
+
+</div>
+
+      </header>
+
+      <main class="main">
+        
+
+
+
+
+
+
+
+<div >
+
+  <div class="single-intro-container">
+
+    
+
+    <h1 class="single-title">New</h1>
+    
+
+    
+
+    <p class="single-readtime">
+      
+      
+      
+      <time datetime="2025-03-04T00:46:47&#43;08:00">March 4, 2025</time>
+      
+
+      
+    </p>
+
+  </div>
+
+  
+
+  
+
+  
+
+  
+
+  <div class="single-content">
+    <h1 id="烤地瓜-deepseek-导演剪辑版">烤地瓜 deepseek 导演剪辑版</h1>
+<h3 id="实现">实现：</h3>
+<pre tabindex="0"><code>
+from typing import List
+from time import sleep
+
+
+class SweetPotato:
+    &#34;&#34;&#34;
+    🎥 导演剪辑版地瓜类
+    新增功能：
+    1. 完整的烹饪过程记录
+    2. 状态变化特效标记
+    3. 导演视角的烹饪日志
+    &#34;&#34;&#34;
+
+    def __init__(self, num: int) -&gt; None:
+        self.num = num
+        self.cooked_state = &#34;生的&#34;
+        self.cooked_time = 0
+        self.condiments: List[dict] = []  # 现在记录添加时间和佐料
+        self.cooking_log: List[str] = []  # 导演专用日志
+        self._state_history = []  # 状态变化历史
+    
+    
+    def cook(self, time: int) -&gt; None:
+        &#34;&#34;&#34;🔥 烧烤操作增加特效和过程记录&#34;&#34;&#34;
+        print(f&#34;\n{&#39;-&#39; * 30}&#34;)
+        print(f&#34;🍠 地瓜 {self.num} 开始接受 {time} 分钟炙烤...&#34;)
+    
+        prev_state = self.cooked_state
+        self.cooked_time += time
+    
+        # 记录状态变化
+        if 0 &lt;= self.cooked_time &lt; 3:
+            new_state = &#34;生的&#34;
+        elif 3 &lt;= self.cooked_time &lt; 6:
+            new_state = &#34;半生不熟&#34;
+        elif 6 &lt;= self.cooked_time &lt; 8:
+            new_state = &#34;熟了&#34;
+        else:
+            new_state = &#34;烤糊了&#34;
+    
+        # 添加状态变化特效
+        if new_state != prev_state:
+            self._show_state_transition(prev_state, new_state)
+            self.cooked_state = new_state
+            self._state_history.append((self.cooked_time, new_state))
+            self.cooking_log.append(f&#34;⏱️ {self.cooked_time}min：状态变化「{prev_state} → {new_state}」&#34;)
+        else:
+            self.cooking_log.append(f&#34;⏱️ {self.cooked_time}min：持续强化「{self.cooked_state}」状态&#34;)
+    
+        # 模拟烧烤过程
+        for t in range(1, time + 1):
+            print(f&#34;🔥 火焰特效 | 当前温度：{200 + t * 50}°C&#34;, end=&#39;\r&#39;)
+            sleep(0.3)
+        print(&#34; &#34; * 30, end=&#39;\r&#39;)  # 清除特效行
+    
+    
+    def add_condiment(self, condiment: str) -&gt; None:
+        &#34;&#34;&#34;🧂 佐料添加增加电影感&#34;&#34;&#34;
+        self.condiments.append({
+            &#34;time&#34;: self.cooked_time,
+            &#34;name&#34;: condiment
+        })
+        self.cooking_log.append(f&#34;🧂 {self.cooked_time}min：添加「{condiment}」特写镜头&#34;)
+        print(f&#34;✨ 电影特效：{condiment}在慢镜头中缓缓洒落...&#34;)
+    
+    def _show_state_transition(self, old: str, new: str) -&gt; None:
+        &#34;&#34;&#34;🎬 状态变化特效&#34;&#34;&#34;
+        print(f&#34;\n🎞️ 蒙太奇转场：&#34;)
+        print(f&#34;   旧状态：{old} → 新状态：{new}&#34;)
+        print(&#34;   ░░░░░░░░░░░░░░░░░░░░░░░░&#34;)
+        print(&#34;   ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒&#34;)
+        print(&#34;   ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓&#34;)
+        print(&#34;   🎇 状态变化特效完成！&#34;)
+    
+    def director_log(self) -&gt; str:
+        &#34;&#34;&#34;📽️ 生成导演剪辑版日志&#34;&#34;&#34;
+        log = [f&#34;\n{&#39;=&#39; * 30}&#34;]
+        log.append(f&#34;🎥 《风味地瓜》No.{self.num} 拍摄日志&#34;)
+        log.append(f&#34;📅 总拍摄时长：{self.cooked_time}分钟&#34;)
+        log.append(&#34;\n🎬 关键帧记录：&#34;)
+        log.extend(self.cooking_log)
+        log.append(&#34;\n🍯 佐料添加时间线：&#34;)
+        for c in self.condiments:
+            log.append(f&#34;   🕒 {c[&#39;time&#39;]}min：{c[&#39;name&#39;]}&#34;)
+        log.append(f&#34;\n🎞️ 最终状态：{self.cooked_state}&#34;)
+        log.append(f&#34;{&#39;=&#39; * 30}&#34;)
+        return &#34;\n&#34;.join(log)
+    
+    def __str__(self) -&gt; str:
+        &#34;&#34;&#34;🎦 导演版最终呈现&#34;&#34;&#34;
+        return (f&#34;🍠 地瓜 {self.num} 最终报告：\n&#34;
+                f&#34;   🕒 总时长：{self.cooked_time}分钟\n&#34;
+                f&#34;   🔥 最终状态：{self.cooked_state}\n&#34;
+                f&#34;   🧂 调味组合：{&#39;, &#39;.join([c[&#39;name&#39;] for c in self.condiments]) or &#39;无&#39;}&#34;)
+
+
+if __name__ == &#34;__main__&#34;:
+    print(&#34;🎬 导演喊：Action！\n&#34;)
+
+    # 第一幕：主角地瓜的蜕变
+    print(&#34;\n=== 第一幕：新生地瓜的觉醒 ===&#34;)
+    sp1 = SweetPotato(1)
+    sp1.cook(2)
+    sp1.add_condiment(&#34;初酿酱油&#34;)
+    sp1.cook(3)
+    sp1.add_condiment(&#34;喜马拉雅岩盐&#34;)
+    sp1.cook(1)
+    sp1.add_condiment(&#34;魔鬼辣酱&#34;)
+    sp1.cook(2)
+
+    # 第二幕：配角地瓜的意外
+    print(&#34;\n=== 第二幕：命运的岔路口 ===&#34;)
+    sp2 = SweetPotato(2)
+    sp2.cook(1)
+    sp2.add_condiment(&#34;田园番茄酱&#34;)
+    sp2.cook(5)
+    sp2.add_condiment(&#34;轻食沙拉&#34;)
+    sp2.cook(4)
+    sp2.add_condiment(&#34;山葵之魂&#34;)
+
+    # 最终呈现
+    print(&#34;\n\n=== 最终成片 ===&#34;)
+    print(sp1)
+    print(sp1.director_log())
+    print(&#34;\n&#34; + &#34;🌟&#34; * 30 + &#34;\n&#34;)
+    print(sp2)
+    print(sp2.director_log())
+
+    print(&#34;\n🎬 导演喊：Cut！&#34;)
+</code></pre><h3 id="运行示例">运行示例：</h3>
+<p>🎬 导演喊：Action！</p>
+<hr>
+<p>🍠 地瓜 1 开始接受 2 分钟炙烤&hellip;</p>
+<p>🔥 火焰特效 | 当前温度：250°C
+&hellip;</p>
+<p>🎞️ 蒙太奇转场：</p>
+<p>旧状态：生的 → 新状态：半生不熟</p>
+<p>░░░░░░░░░░░░░░░░░░░░░░░░</p>
+<p>▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒</p>
+<p>▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓</p>
+<p>🎇 状态变化特效完成！</p>
+<p>✨ 电影特效：魔鬼辣酱在慢镜头中缓缓洒落&hellip;</p>
+<p>=== 最终成片 ===</p>
+<p>🍠 地瓜 1 最终报告：</p>
+<p>🕒 总时长：8分钟</p>
+<p>🔥 最终状态：烤糊了</p>
+<p>🧂 调味组合：初酿酱油, 喜马拉雅岩盐, 魔鬼辣酱</p>
+<p>==============================</p>
+<p>🎥 《风味地瓜》No.1 拍摄日志</p>
+<p>📅 总拍摄时长：8分钟
+&hellip;</p>
+<p>🎬 导演喊：Cut！</p>
+
+    
+  </div>
+
+  
+
+
+  
+
+  
+  
+
+<div class="single-pagination">
+    <hr />
+
+    <div class="flex">
+
+        <div class="single-pagination-prev">
+            
+            <div class="single-pagination-container-prev">
+                <div class="single-pagination-text">←</div>
+                <div class="single-pagination-text">
+                    <a href="/posts/the-end/">
+                        The End
+                    </a>
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="single-pagination-next">
+            
+        </div>
+
+    </div>
+
+    <hr />
+</div>
+
+
+
+  
+
+  
+
+  
+  <div class="back-to-top">
+    <a href="#top">
+      back to top
+    </a>
+  </div>
+  
+
+</div>
+
+
+      </main>
+    </div>
+
+    <footer>
+      
+
+    
+    <p>Powered by
+        <a href="https://gohugo.io/">Hugo</a>
+        and
+        <a href="https://github.com/tomfran/typo">tomfran/typo</a>
+    </p>
+    
+    
+    
+
+
+
+<link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css">
+<script defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script>
+
+<script defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body);"></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false }
+      ]
+    });
+  });
+</script>
+
+    </footer>
+    
+  </body>
+
+  <script>
+
+  function isAuto() {
+    return document.body.classList.contains("auto");
+  }
+
+  function setTheme() {
+    if (!isAuto()) {
+      return
+    }
+
+    document.body.classList.remove("auto");
+    let cls = "light";
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      cls = "dark";
+    }
+
+    document.body.classList.add(cls);
+  }
+
+  function invertBody() {
+    document.body.classList.toggle("dark");
+    document.body.classList.toggle("light");
+  }
+
+  if (isAuto()) {
+    window.matchMedia('(prefers-color-scheme: dark)').addListener(invertBody);
+  }
+
+  setTheme();
+
+</script>
+
+</html>
